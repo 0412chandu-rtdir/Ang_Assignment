@@ -1,0 +1,16 @@
+<mat-list class="user-actions" aria-label="User actions">
+  @for (user of users; track user.id) {
+    <mat-list-item>
+      <button
+        mat-flat-button
+        class="view-user-button"
+        matListItemLine
+        type="button"
+        [attr.aria-label]="'View user: ' + user.name"
+        (click)="viewUser(user)"
+      >
+        View User <span aria-hidden="true">&#8594;</span>
+      </button>
+    </mat-list-item>
+  }
+</mat-list>

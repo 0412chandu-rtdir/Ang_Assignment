@@ -1,0 +1,11 @@
+<main class="dashboard-page">
+  <section class="welcome-block">
+    <p class="eyebrow">Welcome</p>
+    <h1>Hello, {{ userName }}.</h1>
+  </section>
+
+  <app-user-list [users]="users"></app-user-list>
+
+  <button class="secondary-button dashboard-logout" type="button" (click)="logout()">Log out <span
+      aria-hidden="true">&#8599;</span></button>
+</main>

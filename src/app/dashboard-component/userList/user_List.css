@@ -1,0 +1,32 @@
+.user-actions {
+  padding: 0;
+}
+
+.user-actions mat-list-item {
+  padding: 0;
+}
+
+.view-user-button {
+  --mdc-filled-button-container-color: var(--accent);
+  --mdc-filled-button-label-text-color: #fff;
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: 3px;
+  font-weight: 700;
+  transition: transform 160ms ease, --mdc-filled-button-container-color 160ms ease;
+}
+
+.view-user-button:hover {
+  --mdc-filled-button-container-color: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+.view-user-button:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.view-user-button span {
+  margin-left: 10px;
+  font-size: 18px;
+}

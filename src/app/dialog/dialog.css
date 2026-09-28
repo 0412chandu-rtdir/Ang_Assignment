@@ -1,0 +1,53 @@
+:host {
+	display: block;
+	width: min(90vw, 420px);
+	padding: 30px;
+	color: var(--ink, #17231f);
+	background: var(--panel, #fffefb);
+	border: 1px solid var(--line, #dce3db);
+	border-radius: 8px;
+	box-shadow: 0 22px 60px rgba(23, 35, 31, 0.2);
+}
+
+h2 {
+	margin: 0 0 12px;
+	color: var(--ink, #17231f);
+	font-family: 'Space Grotesk', sans-serif;
+	font-size: 28px;
+	line-height: 1.1;
+}
+
+p {
+	margin: 0;
+	color: var(--muted, #68746f);
+	font-size: 15px;
+	line-height: 1.6;
+}
+
+div:last-child {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 26px;
+}
+
+button {
+	padding: 11px 18px;
+	color: #fff;
+	font: inherit;
+	font-weight: 700;
+	background: var(--accent, #e76f51);
+	border: 0;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+	background: var(--accent-dark, #c6533a);
+	transform: translateY(-1px);
+}
+
+button:focus-visible {
+	outline: 3px solid rgba(231, 111, 81, 0.28);
+	outline-offset: 3px;
+}

@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>User Details</h2>
+
+<mat-dialog-content>
+  <p><strong>Name:</strong> {{ data.user.name }}</p>
+  <p><strong>Email:</strong> {{ data.user.email }}</p>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button type="button" (click)="closeDialog()">Close</button>
+</mat-dialog-actions>

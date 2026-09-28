@@ -1,0 +1,41 @@
+<main class="auth-page">
+  <section class="auth-intro" aria-label="Welcome back">
+    <p class="eyebrow">Assignment</p>
+    <h1>Welcome back</h1>
+    <div class="intro-mark" aria-hidden="true">→</div>
+  </section>
+
+  <section class="auth-panel">
+    <div class="form-heading">
+      <p class="eyebrow">Welcome back</p>
+      <h2>Sign in</h2>
+      <p>Enter your details to continue.</p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+      <div class="field-group">
+        <label for="username">Email address</label>
+        <input id="username" type="email" formControlName="username" placeholder="alex@example.com" autocomplete="email" />
+        @if (loginForm.controls.username.invalid && (loginForm.controls.username.touched || submitted)) {
+          <small class="error">Enter a valid email address.</small>
+        }
+      </div>
+
+      <div class="field-group">
+        <label for="login-password">Password</label>
+        <input id="login-password" type="password" formControlName="password" placeholder="Enter your password" autocomplete="current-password" />
+        @if (loginForm.controls.password.invalid && (loginForm.controls.password.touched || submitted)) {
+          <small class="error">Password is required.</small>
+        }
+      </div>
+
+      @if (loginError) {
+        <p class="form-error" role="alert">{{ loginError }}</p>
+      }
+
+      <button class="primary-button" type="submit">Sign in <span aria-hidden="true">&#8594;</span></button>
+    </form>
+
+      <p class="switch-auth">New here? <a href="/signup">Create an account</a></p>
+  </section>
+</main>

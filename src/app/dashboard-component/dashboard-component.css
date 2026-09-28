@@ -1,0 +1,28 @@
+.dashboard-dialog {
+  width: min(90%, 420px);
+  padding: 2rem;
+  border: 0;
+  border-radius: 12px;
+  background: white;
+  color: #222;
+}
+
+.dashboard-dialog::backdrop {
+  background: rgb(0 0 0 / 55%);
+}
+
+.dashboard-dialog h2 {
+  margin-top: 0;
+}
+
+.dashboard-dialog button {
+  margin-top: 1rem;
+}
+
+.welcome-block h1 {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.1;
+  letter-spacing: -2px;
+}

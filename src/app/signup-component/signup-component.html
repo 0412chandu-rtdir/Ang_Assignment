@@ -1,0 +1,58 @@
+<main class="auth-page">
+	<section class="auth-intro" aria-label="Create your account">
+		<p class="eyebrow">Assignment</p>
+		<h1>Create your account</h1>
+	
+		<div class="intro-mark" aria-hidden="true">+</div>
+	</section>
+
+	<section class="auth-panel">
+		<div class="form-heading">
+			<p class="eyebrow">Get started</p>
+			<h2>Create account</h2>
+			<p>It takes less than a minute.</p>
+		</div>
+
+		<form [formGroup]="signupForm" (ngSubmit)="signup()" novalidate>
+			<div class="field-group">
+				<label for="name">Full name</label>
+				<input id="name" type="text" formControlName="name" placeholder="Alex Morgan" autocomplete="name" />
+				@if (signupForm.controls.name.invalid && (signupForm.controls.name.touched || submitted)) {
+					<small class="error">Please enter at least 2 characters.</small>
+				}
+			</div>
+
+			<div class="field-group">
+				<label for="email">Email address</label>
+				<input id="email" type="email" formControlName="email" placeholder="alex@example.com" autocomplete="email" />
+				@if (signupForm.controls.email.invalid && (signupForm.controls.email.touched || submitted)) {
+					<small class="error">Enter a valid email address.</small>
+				}
+			</div>
+
+			<div class="field-row">
+				<div class="field-group">
+					<label for="password">Password</label>
+					<input id="password" type="password" formControlName="password" placeholder="8+ characters" autocomplete="new-password" />
+					@if (signupForm.controls.password.invalid && (signupForm.controls.password.touched || submitted)) {
+						<small class="error">Use at least 8 characters.</small>
+					}
+				</div>
+
+				<div class="field-group">
+					<label for="confirmPassword">Confirm password</label>
+					<input id="confirmPassword" type="password" formControlName="confirmPassword" placeholder="Repeat password" autocomplete="new-password" />
+					@if (signupForm.controls.confirmPassword.invalid && (signupForm.controls.confirmPassword.touched || submitted)) {
+						<small class="error">Please confirm your password.</small>
+					} @else if (signupForm.hasError('passwordsMismatch') && (signupForm.controls.confirmPassword.touched || submitted)) {
+						<small class="error">Passwords do not match.</small>
+					}
+				</div>
+			</div>
+
+			<button class="primary-button" type="submit">Create account <span aria-hidden="true">&#8594;</span></button>
+		</form>
+
+			<p class="switch-auth">Already have an account? <a href="/login">Sign in</a></p>
+	</section>
+</main>
